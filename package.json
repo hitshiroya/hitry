@@ -11,10 +11,8 @@
     "css-compile": "sass --style expanded src/scss/bootstrap-theme.scss public/css/bootstrap/bootstrap.css",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output public/css/bootstrap/bootstrap.min.css public/css/bootstrap/bootstrap.css",
     "css": "npm-run-all --sequential css-*",
-    "templates": "pug --pretty -o public/ src/pug/",
-    "build": "npm-run-all --sequential clean copy-* templates css",
-    "watch": "npm-run-all build --parallel watch-templates watch-css browsersync",
-    "watch-templates": "npm run templates -- --watch",
+    "build": "npm-run-all --sequential clean copy-* css",
+    "watch": "npm-run-all build --parallel watch-css browsersync",
     "watch-css": "npm run css-compile -- --watch"
   },
   "devDependencies": {
